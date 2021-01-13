@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap&effect=shadow-multiple|3d-float');
+
+body {
+  background-color:#14213d;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.login {
+  margin:0 auto;
+  padding-top:200px;
+  width:50%;
+  text-align: center;
+}
+
+h1 {
+  color:white;
+}
+
+.btn {
+  width: 100%;
+}
+
+.btn-info1 {
+color: #fff;
+background-color: #ffffff;
+border-color: #ffffff;
+border-radius:0px;
+color:black;
+
+}
