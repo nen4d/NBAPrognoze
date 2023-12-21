@@ -45,7 +45,7 @@
               <a class="nav-link" href="clanovi.php"><i class="fa fa-users" aria-hidden="true" style="color:white"></i> Clanovi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="posete.php"><i class="fa fa-line-chart" aria-hidden="true" style="color:white"></i> Posete</a>
+              <a class="nav-link" href="#"><i class="fa fa-line-chart" aria-hidden="true" style="color:white"></i> Posete</a>
             </li>
           </ul>
           <a href="odjava.php"><button class="btn btn-outline-odjava my-2 my-sm-0" type="submit">Odjava</button></a>

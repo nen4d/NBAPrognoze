@@ -59,25 +59,16 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 <!--===============================================================================================-->
+
 </head>
 <body>
-
 	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-50 p-b-90">
+		<div class="container container-login100">
+			<div class="wrap-login100 p-t-50">
 				<div class="nbaprognoze">
 					<h1>NBA Prognoze</h1>
-				</div>
-
-				<div class="tipovi">
-
-
-					<p>
-					<br>
-					Prijavljeni ste kao: <b><?php echo $ime; ?></b><br>
-					Vasa clanarina traje do: <b><?php echo DateTime::CreateFromFormat('Y-m-d', $datum)->format('d/M/Y'); ?></b><br>
-					Datum analize:
-					<b>
+					<div class="bottomright">
+						<p>Datum analize: <b>
 						<?php
 
 							$sth = $connection->prepare("SELECT datum FROM prognoze WHERE id='1'");
@@ -90,9 +81,14 @@
 							echo DateTime::CreateFromFormat('Y-m-d', $datumupdate)->format('d/M/Y');
 
 						;?>
-					</b>
-					</p><hr>
+						</b></p>
+					</div>
+				</div>
+				<div class="odjava">
+					<a href="odjava.php"><button class="btn btn-odjava"><i class="fas fa-sign-out-alt"></i> Odjavi se</button></a>
+				</div>
 
+				<div class="tipovi">
 					<div class="tip">
 
 						<?php
@@ -103,9 +99,7 @@
 
 						?>
 
-						<h2><?php echo "$row1[single]"; ?> - <b><?php echo "$row1[tip]" . "\n"; echo "$row1[granicabroj]" ?> <i class="fas fa-arrow-right"></i> <i class="<?php echo $granica = base64_decode($row1['granica']); ?>"></i><hr class="tipline"><?php } ?></b></h2>
-
-						<hr>
+					<h2><a href="<?php echo '#tipid' . $row1['id']; ?>"  class="smoothScroll"><?php echo "$row1[single]"; ?> - <b><?php echo "$row1[tip]" . "\n"; echo "$row1[granicabroj]" ?></a> <i class="fas fa-arrow-right"></i> <i class="<?php echo $granica = base64_decode($row1['granica']); ?>"></i><hr class="tipline"><?php } ?></b></h2>
 
 					</div>
 					<div class="analiza">
@@ -119,16 +113,24 @@
 						?>
 
 							<br>
-							<h2><b><?php echo "$row2[single]" . "\n - \n"; echo "$row2[tip]" ?></b></h2>
-							<p><?php echo "$row2[opis]"; ?></p><br>
-
+							<div class="tipanaliza" id="<?php echo 'tipid' . $row2['id']; ?>">
+								<h2><b><?php echo "$row2[single]" . "\n - \n"; echo "$row2[tip]" ?></b></h2>
+								<p><?php echo "$row2[opis]"; ?></p><br>
+							</div>
 							<?php }; ?>
 
 
 					</div>
 				</div>
+				<footer>
+					<div class="clanarina">
+							<p>Vasa clanarina traje do: <b><?php echo DateTime::CreateFromFormat('Y-m-d', $datum)->format('d/M/Y'); ?></b><br>
+								Instagram: <a href="https://www.instagram.com/nbaprognoze" target="_blank"><b>NBAPROGNOZE</b></a></p>
+					</div>
+				</footer>
 			</div>
 		</div>
+		<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
 	</div>
 
 
@@ -150,7 +152,52 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+<!--===============================================================================================-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/smooth.js"></script>
+	<script>$(document).ready(function(){
+		$(window).scroll(function () {
+				if ($(this).scrollTop() > 50) {
+					$('#back-to-top').fadeIn();
+				} else {
+					$('#back-to-top').fadeOut();
+				}
+			});
+			// scroll body to 0px on click
+			$('#back-to-top').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 400);
+				return false;
+			});
+	});
+	</script>
 
+	<script>$(document).ready(function(){
+	  // Add smooth scrolling to all links
+	  $("a").on('click', function(event) {
+
+	    // Make sure this.hash has a value before overriding default behavior
+	    if (this.hash !== "") {
+	      // Prevent default anchor click behavior
+	      event.preventDefault();
+
+	      // Store hash
+	      var hash = this.hash;
+
+	      // Using jQuery's animate() method to add smooth page scroll
+	      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	      $('html, body').animate({
+	        scrollTop: $(hash).offset().top
+	      }, 800, function(){
+
+	        // Add hash (#) to URL when done scrolling (default click behavior)
+	        window.location.hash = hash;
+	      });
+	    } // End if
+	  });
+	});
+	</script>
 </body>
 </html>
 

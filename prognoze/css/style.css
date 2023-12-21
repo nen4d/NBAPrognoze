@@ -1,5 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
+@media screen and (min-width: 1024px){
+  .container-login100 {
+    width: 73%;
+  }
+}
+
+/*###Tablet(medium)###*/
+@media screen and (min-width : 768px) and (max-width : 1023px){
+  .container-login100 {
+    width: 88%;
+  }
+}
+
+/*### Smartphones (portrait and landscape)(small)### */
+@media screen and (min-width : 0px) and (max-width : 767px){
+  .container-login100 {
+    width: 97%;
+  }
+}
+
+.wrap-login100 {
+    width: 100%;
+}
+
+.odjava {
+  padding-bottom: 20px;
+}
+
+.btn-odjava {
+  position:relative;
+  float:right;
+  background-color: rgb(29, 66, 137);
+  border-radius:0px;
+  font-family: Ubuntu-Regular;
+  color:white;
+  border-bottom-left-radius: 5px;
+}
+
+.btn-odjava:hover,
+.btn-odjava:active,
+.btn-odjava:focus,
+.btn-odjava.active {
+  /* let's darken #004E64 a bit for hover effect */
+  background: rgb(200, 15, 46);
+  color: white;
+  border-color: rgb(200, 15, 46);
+}
+
 .tipline {
   width: 30%;
   margin:0 auto;
   padding-bottom: 8px;
+}
+
+.analiza {
+  background: rgb(242,242,242);
+  background: radial-gradient(circle, rgba(242,242,242,1) 0%, rgba(255,255,255,1) 50%, rgba(243,243,243,1) 79%, rgba(245,245,245,1) 100%);
+}
+
+.tip a b {
+  color:#403866;
+}
+
+.tip {
+  padding-bottom: 27px;
+}
+
+.tip h2 {
+  font-size:1rem;
+}
+
+.tip h2 a {
+  font-size:1rem;
+}
+
+.tipanaliza h2 {
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.tipanaliza p {
+  padding-left:0;
+  font-family: 'Roboto', sans-serif;
+  font-weight : lighter;
+}
+
+.tipanaliza {
+  background-color: white;
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+  width: 97%;
+  padding: 7px 15px 7px 15px;
+  margin: 0 auto;
+  border-radius: 14px;
+}
+
+.tipanaliza p {
+  font-weight : 400;
+  text-align: left;
+}
+
+.bottomright p {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 16px;
+  color:white;
+}
+
+.nbaprognoze {
+  position: relative;
+}
+
+.tip {
+  padding-top:40px;
+}
+
+footer {
+  background-color: #121212;
+  color:white;
+  border-radius: 0px 0px 10px 10px;
+  margin-top:40px;
+  height:100px;
+}
+
+.clanarina p {
+    color:white;
+    text-align: left;
+    font-size: 1.05rem;
+    padding:15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.clanarina a {
+  color:white;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: underline;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
 }

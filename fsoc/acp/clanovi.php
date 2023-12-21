@@ -70,7 +70,7 @@
 
                 <?php
 
-                $sql = "SELECT * FROM korisnici ORDER BY id";
+                $sql = "SELECT * FROM korisnici ORDER BY clanarina DESC";
 
                   foreach ($connection->query($sql) as $row) {
 
